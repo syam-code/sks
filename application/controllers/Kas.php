@@ -83,7 +83,7 @@ class Kas extends CI_Controller
 		}
 	}
 
-	function download()
+	function download_excel()
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		$now = date('y-m-d');
@@ -124,5 +124,17 @@ class Kas extends CI_Controller
 			$no++;
 		}
 		$writer->writeToStdOut();
+	}
+
+	function download_pdf()
+	{
+		$this->load->library('mypdf');
+		$view = 'kas/download_pdf';
+		$data['row'] = $this->kas_m->get_all();
+		$data['sum_jumlah'] = $this->kas_m->total_kas();
+		$filename = 'laporan_kas_' .  date('Y-m-d H:m:s');
+		$paper = 'A4';
+		$orientation = 'potrait';
+		$this->mypdf->generate($view, $data,  $filename, $paper, $orientation);
 	}
 }

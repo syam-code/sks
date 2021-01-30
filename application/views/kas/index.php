@@ -17,8 +17,11 @@ $this->load->view('templates/sidebar');
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
                     <i class="fas fa-plus"></i> Tambah Kas Bulanan
                 </button>
-                <a href="<?= site_url('kas/download'); ?>" class="btn btn-success">
+                <a href="<?= site_url('kas/download_excel'); ?>" class="btn btn-success">
                     <i class="fas fa-file-excel"></i> Export To Excel
+                </a>
+                <a href="<?= site_url('kas/download_pdf'); ?>" target="_blank" class="btn btn-danger">
+                    <i class="fas fa-file-pdf"></i> Export To Pdf
                 </a>
             </div>
             <div class="col-xl-3 col-md-6 text-right">
