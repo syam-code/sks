@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@fullcalendar/interaction": "^5.5.0",
+    "fullcalendar-scheduler": "^5.5.1",
+    "jquery": "^3.5.1",
+    "jquery-mask-plugin": "^1.14.16",
+    "sweetalert2": "^10.13.0"
+  }
+}
